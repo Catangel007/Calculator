@@ -1,0 +1,89 @@
+body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container{
+    height: 60vh;
+    width: 30vh;
+    background-color: black;
+    padding: 4px;
+}
+
+.display{
+    height: 20vh;
+    width: 30vh;
+    background-color:black;
+    color: white;
+    text-align: end;
+}
+
+.row{
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    width: 30vh;
+    justify-content: space-around;
+     
+}
+#one,#two,#three,#four,#five,#six,#seven,#eight,#nine,#dot{
+    height:7vh ;
+    width:7vh ;
+    border-radius: 50%;
+    background-color: rgb(36, 35, 35);
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    border: 0;
+    margin: 1px;
+    
+
+} 
+#add,#subtract,#multiply,#divide,#equals{
+    height:7vh ;
+    width:7vh ;
+    border-radius: 50%;
+    background-color:rgb(229, 140, 24);
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    border: 0;
+    margin: 1px;
+}
+#uniary,#percent,#ac{
+    height:7vh ;
+    width:7vh ;
+    border-radius: 50%;
+    background-color:rgb(109, 109, 109);
+    color:black; 
+    border: 0; 
+    text-align: center; 
+    font-size: 20px;
+    margin: 1px;
+}
+
+#zero{
+    height:7vh ;
+    width: 14vh;
+    border-radius: 30%;
+    background-color: rgb(36, 35, 35);
+    color: white;
+    border: 0; 
+    font-size: 20px; 
+    margin: 1px;
+
+}
+#zero:hover,#one:hover,#two:hover,#three:hover,#four:hover,#five:hover,#six:hover,#seven:hover,#eight:hover,#nine:hover,#dot:hover{
+    background-color: rgb(71, 70, 70);
+}
+#add:hover,#subtract:hover,#multiply:hover,#divide:hover,#equals:hover{
+    background-color:rgb(250, 176, 78);
+
+}
+#uniary:hover,#percent:hover,#ac:hover{
+    background-color:rgb(162, 159, 159);
+
+}
