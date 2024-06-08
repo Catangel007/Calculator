@@ -18,12 +18,12 @@ const zero= document.querySelector("#zero");
 const dot = document.querySelector("#dot");
 const equals = document.querySelector("#equals");
 const display = document.querySelector(".display");
-let num = document.querySelector(".row");
+
 
 let operandA = '';
 let operandB = '';
 let operator = '';
-let result = '';
+let result = 0;
 
 
 
@@ -33,62 +33,76 @@ let result = '';
 function plus(operandA,operandB){
 result=(operandA + operandB); 
 
-} plus();
+} 
 
 function minus(operandA,operandB){
     result=(operandA - operandB); 
     
-    }minus()
+    }
 
     function multiplication(operandA,operandB){
         result=(operandA * operandB); 
         
-        }multiplication();
+        }
 
         function division(operandA,operandB){
             result=(operandA / operandB); 
             
-            }division();
+            }
 
             // get operandA
             // function getOperandA(){
+                let num = document.querySelector("#row");
+                for(let i=0; i<9; i++){
             num.addEventListener("click", (e)=>{
              let target= e.target;
              switch(target.id){
                 case "one":
-                    operandA=1;
+                    operandA.push(1);
+                    display.textContent = `${operandA}`;
                     break;
                     case "two":
-                    operandA=2;
+                    operandA.push(2);
+                    display.textContent = `${operandA}`;
                     break;
                     case "three":
-                    operandA=3;
+                    operandA.push(3);
+                    display.textContent = `${operandA}`;
                     break;
                     case "four":
-                    operandA=4;
+                    operandA.push(4);
+                    display.textContent = `${operandA}`;
                     break;
                     case "five":
-                    operandA=5;
+                    operandA.push(5);
+                    display.textContent = `${operandA}`;
                     break;
                     case "six":
-                    operandA=6;
+                    operandA.push(6);
+                    display.textContent = `${operandA}`;
                     break;
                     case "seven":
-                    operandA=7;
+                    operandA.push(7);
+                    display.textContent = `${operandA}`;
                     break;
                     case "eight":
-                    operandA=8;
+                    operandA.push(8);
+                    display.textContent = `${operandA}`;
                     break;
                     case "nine":
-                    operandA=9;
+                    operandA.push(9);
+                    display.textContent = `${operandA}`;
                     break;
                     case "zero":
-                    operandA=0;
+                    operandA.push(0);
+                    display.textContent = `${operandA}`;
                     break;
                     
                    
              }console.log(operandA);
             })
+
+        }
        // }getOperandA();
 
        // function getOperator(){
@@ -97,18 +111,22 @@ function minus(operandA,operandB){
                 switch(target.id){
                     case "add":
                     operator='+';
+                    display.textContent = `${operator}`;
                     add();
                     break;
                     case "subtract":
                     operator='-';
+                    display.textContent = `${operandA}`;
                     minus();
                     break;
                     case "multiply":
                     operator='x';
+                    display.textContent = `${operandA}`;
                     multiplication();
                     break;
                     case "divide":
                     operator='÷';
+                    display.textContent = `${operandA}`;
                     division();
                     break;
                     // case "add":
@@ -144,35 +162,44 @@ function minus(operandA,operandB){
              let target= e.target;
              switch(target.id){
                 case "one":
-                    operandB=1;
+                    operandB.push(1);
+                    display.textContent = `${operandB}`;
                     break;
                     case "two":
-                    operandB=2;
+                    operandB.push(2);
+                    display.textContent = `${operandB}`;
                     break;
                     case "three":
-                    operandB=3;
+                    operandB.push(3);
+                    display.textContent = `${operandB}`;
                     break;
                     case "four":
-                    operandB=4;
+                    operandB.push(4);
+                    display.textContent = `${operandB}`;
                     break;
                     case "five":
-                    operandB=5;
+                    operandB.push(5);
+                    display.textContent = `${operandB}`;
                     break;
                     case "six":
-                    operandB=6;
+                    operandB.push(6);
+                    display.textContent = `${operandB}`;
                     break;
                     case "seven":
-                    operandB=7;
+                    operandB.push(7);
+                    display.textContent = `${operandB}`;
                     break;
                     case "eight":
-                    operandB=8;
+                    operandB.push(8);
+                    display.textContent = `${operandB}`;
                     break;
                     case "nine":
-                    operandB=9;
+                    operandB.push(9);
+                    display.textContent = `${operandB}`;
                     break;
                     case "zero":
-                    operandB=0;
-                    console.log("0");
+                    operandB.push(0);
+                    display.textContent = `${operandB}`;
                     break;
                     
                    
@@ -182,4 +209,4 @@ function minus(operandA,operandB){
         
 
 
-        display.textContent = `${operandA+operator+operandB}`;
+       

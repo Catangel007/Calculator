@@ -7,8 +7,8 @@ body{
 }
 
 .container{
-    height: 60vh;
-    width: 30vh;
+    height: 62vh;
+    width: 34vh;
     background-color: black;
     padding: 4px;
 }
@@ -22,14 +22,7 @@ body{
     padding-bottom: 10px;
 }
 
-.row{
-    height: 8vh;
-    display: flex;
-    flex-direction: row;
-    width: 30vh;
-    justify-content: space-around;
-     
-}
+
 #one,#two,#three,#four,#five,#six,#seven,#eight,#nine,#dot{
     height:7vh ;
     width:7vh ;
@@ -87,4 +80,13 @@ body{
 #uniary:hover,#percent:hover,#ac:hover{
     background-color:rgb(162, 159, 159);
 
+}
+
+#row{
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    width: 30vh;
+    justify-content: space-around;
+     
 }
