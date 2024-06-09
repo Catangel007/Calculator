@@ -57,7 +57,7 @@ function minus(operandA,operandB){
             num.addEventListener("click", (e)=>{
              let target= e.target;
              switch(target.id){
-                case "one":
+                    case "one":
                     operandA.push(1);
                     display.textContent = `${operandA}`;
                     break;
@@ -101,7 +101,6 @@ function minus(operandA,operandB){
                    
              }console.log(operandA);
             })
-
         }
        // }getOperandA();
 
@@ -158,6 +157,7 @@ function minus(operandA,operandB){
 
 
        // function getOperandB(){
+        for(let i=0; i<9; i++){
             num.addEventListener("click", (e)=>{
              let target= e.target;
              switch(target.id){
@@ -206,7 +206,7 @@ function minus(operandA,operandB){
              } console.log(operandB);  
             })
        // }getOperandB();
-        
+        }
 
 
        
