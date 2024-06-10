@@ -20,9 +20,9 @@ const equals = document.querySelector("#equals");
 const display = document.querySelector(".display");
 
 
-let operandA = '';
-let operandB = '';
-let operator = '';
+let operandA = [];
+let operandB = [];
+let operator = [];
 let result = 0;
 
 
@@ -52,56 +52,56 @@ function minus(operandA,operandB){
 
             // get operandA
             // function getOperandA(){
-                let num = document.querySelector("#row");
-                for(let i=0; i<9; i++){
+                let row = document.querySelector("#row");
+        let num = row.querySelectorAll("button") 
             num.addEventListener("click", (e)=>{
              let target= e.target;
              switch(target.id){
                     case "one":
-                    operandA.push(1);
+                    operandA.concat(1);
                     display.textContent = `${operandA}`;
                     break;
                     case "two":
-                    operandA.push(2);
+                    operandA.concat(2);
                     display.textContent = `${operandA}`;
                     break;
                     case "three":
-                    operandA.push(3);
+                    operandA.concat(3);
                     display.textContent = `${operandA}`;
                     break;
                     case "four":
-                    operandA.push(4);
+                    operandA.concat(4);
                     display.textContent = `${operandA}`;
                     break;
                     case "five":
-                    operandA.push(5);
+                    operandA.concat(5);
                     display.textContent = `${operandA}`;
                     break;
                     case "six":
-                    operandA.push(6);
+                    operandA.concat(6);
                     display.textContent = `${operandA}`;
                     break;
                     case "seven":
-                    operandA.push(7);
+                    operandA.concat(7);
                     display.textContent = `${operandA}`;
                     break;
                     case "eight":
-                    operandA.push(8);
+                    operandA.concat(8);
                     display.textContent = `${operandA}`;
                     break;
                     case "nine":
-                    operandA.push(9);
+                    operandA.concat(9);
                     display.textContent = `${operandA}`;
                     break;
                     case "zero":
-                    operandA.push(0);
+                    operandA.concat(0);
                     display.textContent = `${operandA}`;
                     break;
                     
                    
              }console.log(operandA);
             })
-        }
+        
        // }getOperandA();
 
        // function getOperator(){
@@ -157,48 +157,48 @@ function minus(operandA,operandB){
 
 
        // function getOperandB(){
-        for(let i=0; i<9; i++){
+        
             num.addEventListener("click", (e)=>{
              let target= e.target;
              switch(target.id){
                 case "one":
-                    operandB.push(1);
+                    operandB.concat(Number(1));
                     display.textContent = `${operandB}`;
                     break;
                     case "two":
-                    operandB.push(2);
+                    operandB.concat(2);
                     display.textContent = `${operandB}`;
                     break;
                     case "three":
-                    operandB.push(3);
+                    operandB.concat(3);
                     display.textContent = `${operandB}`;
                     break;
                     case "four":
-                    operandB.push(4);
+                    operandB.concat(4);
                     display.textContent = `${operandB}`;
                     break;
                     case "five":
-                    operandB.push(5);
+                    operandB.concat(5);
                     display.textContent = `${operandB}`;
                     break;
                     case "six":
-                    operandB.push(6);
+                    operandB.concat(6);
                     display.textContent = `${operandB}`;
                     break;
                     case "seven":
-                    operandB.push(7);
+                    operandB.concat(7);
                     display.textContent = `${operandB}`;
                     break;
                     case "eight":
-                    operandB.push(8);
+                    operandB.concat(8);
                     display.textContent = `${operandB}`;
                     break;
                     case "nine":
-                    operandB.push(9);
+                    operandB.concat(9);
                     display.textContent = `${operandB}`;
                     break;
                     case "zero":
-                    operandB.push(0);
+                    operandB.concat(0);
                     display.textContent = `${operandB}`;
                     break;
                     
@@ -206,7 +206,7 @@ function minus(operandA,operandB){
              } console.log(operandB);  
             })
        // }getOperandB();
-        }
+        
 
 
        
