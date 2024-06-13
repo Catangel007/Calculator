@@ -20,9 +20,9 @@ const equals = document.querySelector("#equals");
 const display = document.querySelector(".display");
 
 
-let operandA = [];
-let operandB = [];
-let operator = [];
+let operandA = '';
+let operandB = '';
+let operator = '';
 let result = 0;
 
 
@@ -31,22 +31,22 @@ let result = 0;
 
 
 function plus(operandA,operandB){
-result=(operandA + operandB); 
+     return result=(operandA + operandB); 
 
 } 
 
 function minus(operandA,operandB){
-    result=(operandA - operandB); 
+    return result=(operandA - operandB); 
     
     }
 
     function multiplication(operandA,operandB){
-        result=(operandA * operandB); 
+        return result=(operandA * operandB); 
         
         }
 
         function division(operandA,operandB){
-            result=(operandA / operandB); 
+            return result=(operandA / operandB); 
             
             }
 
