@@ -1,8 +1,10 @@
 body{
+    height: 100vh;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center; 
+     margin: 0;
 
 }
 
@@ -11,19 +13,24 @@ body{
     width: 34vh;
     background-color: black;
     padding: 4px;
+    border-radius: 7%;
 }
 
 .display{
-    height: 20vh;
+    height: 12vh;
     width: 30vh;
-    background-color:black;
+    background-color:rgb(45, 44, 44);
     color: white;
-    text-align: end;
-    padding-bottom: 10px;
+    text-align:right;
+    margin: 5vh 2vh;
+    margin-bottom: 2vh;
+    font-size: 4vh;
+    
+    
 }
 
 
-#one,#two,#three,#four,#five,#six,#seven,#eight,#nine,#dot{
+#one,#two,#three,#four,#five,#six,#seven,#eight,#nine,#dot,#delete,#zero{
     height:7vh ;
     width:7vh ;
     border-radius: 50%;
@@ -59,7 +66,7 @@ body{
     margin: 1px;
 }
 
-#zero{
+/* {
     height:7vh ;
     width: 14vh;
     border-radius: 30%;
@@ -69,8 +76,8 @@ body{
     font-size: 20px; 
     margin: 1px;
 
-}
-#zero:hover,#one:hover,#two:hover,#three:hover,#four:hover,#five:hover,#six:hover,#seven:hover,#eight:hover,#nine:hover,#dot:hover{
+} */
+#zero:hover,#one:hover,#two:hover,#three:hover,#four:hover,#five:hover,#six:hover,#seven:hover,#eight:hover,#nine:hover,#dot:hover,#delete:hover{
     background-color: rgb(71, 70, 70);
 }
 #add:hover,#subtract:hover,#multiply:hover,#divide:hover,#equals:hover{
@@ -86,7 +93,7 @@ body{
     height: 8vh;
     display: flex;
     flex-direction: row;
-    width: 30vh;
+    width: 34vh;
     justify-content: space-around;
-     
+     align-items: end;
 }

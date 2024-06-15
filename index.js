@@ -16,13 +16,14 @@ const three = document.querySelector("#three ");
 const divide = document.querySelector("#divide");
 const zero= document.querySelector("#zero");
 const dot = document.querySelector("#dot");
+const del = document.querySelector("#delete")
 const equals = document.querySelector("#equals");
 const display = document.querySelector(".display");
 
 
-let operandA = '';
-let operandB = '';
-let operator = '';
+let operandA = 0;
+let operandB = 0;
+let operator = 0;
 let result = 0;
 
 
@@ -37,175 +38,209 @@ function plus(operandA,operandB){
 
 function minus(operandA,operandB){
     return result=(operandA - operandB); 
-    
-    }
+      }
 
-    function multiplication(operandA,operandB){
+function multiplication(operandA,operandB){
         return result=(operandA * operandB); 
         
         }
 
-        function division(operandA,operandB){
-            return result=(operandA / operandB); 
-            
-            }
+function division(operandA,operandB){
+            return result=(operandA / operandB);
+      }
+
+function getUniary(){
+    let sign = "-";
+    sign.concat(appendA || appendB);
+    return Number(sign);
+}
+
+function getPercent(){
+    let n = (Math(appendA/100))||(Math(appendB/100));
+    return n;
+}
 
             // get operandA
             // function getOperandA(){
-                let row = document.querySelector("#row");
-        let num = row.querySelectorAll("button") 
-            num.addEventListener("click", (e)=>{
-             let target= e.target;
+                let row = document.querySelector("div#row");
+        
+            row.addEventListener("click", (e)=>{
+             let target= e.target
              switch(target.id){
                     case "one":
-                    operandA.concat(1);
-                    display.textContent = `${operandA}`;
+                        display.textContent = `${operandA.push(1)}`;
                     break;
                     case "two":
-                    operandA.concat(2);
-                    display.textContent = `${operandA}`;
+                        
+                        display.textContent = `${operandA.push(2)}`;
                     break;
                     case "three":
-                    operandA.concat(3);
-                    display.textContent = `${operandA}`;
+                        
+                        display.textContent = `${operandA.push(3)}`;
                     break;
                     case "four":
-                    operandA.concat(4);
-                    display.textContent = `${operandA}`;
+                        
+                        display.textContent = `${operandA.push(4)}`;
                     break;
                     case "five":
-                    operandA.concat(5);
-                    display.textContent = `${operandA}`;
+                        
+                        display.textContent = `${operandA.push(5)}`;
                     break;
                     case "six":
-                    operandA.concat(6);
-                    display.textContent = `${operandA}`;
+                        
+                        display.textContent = `${operandA.push(6)}`;
                     break;
                     case "seven":
-                    operandA.concat(7);
-                    display.textContent = `${operandA}`;
+                        
+                        display.textContent = `${operandA.push(7)}`;
                     break;
                     case "eight":
-                    operandA.concat(8);
-                    display.textContent = `${operandA}`;
+                      
+                        display.textContent = `${operandA.push(8)}`;
                     break;
                     case "nine":
-                    operandA.concat(9);
-                    display.textContent = `${operandA}`;
+                    ;
+                    display.textContent = `${operandA.push(9)}`;
                     break;
                     case "zero":
-                    operandA.concat(0);
-                    display.textContent = `${operandA}`;
-                    break;
                     
-                   
+                    display.textContent = `${operandA.push(0)}`;
+                    break;
+                    case "ac":
+                    ac = 0;
+                    display.textContent = ac;
+                    break;
+                    case "uniary":
+                    display.textContent = getUniary();
+                    break;
+                    case "dot":
+                    for(let dots = 0; dots <= 1; dots++){
+                    display.textContent = `${operandA.push(Number("."))}`;
+                     }
+                    break;
+                    case "delete":
+                    break;     
              }console.log(operandA);
             })
         
        // }getOperandA();
 
-       // function getOperator(){
-            num.addEventListener("click", (e)=>{
-                let target= e.target;
-                switch(target.id){
-                    case "add":
-                    operator='+';
-                    display.textContent = `${operator}`;
-                    add();
-                    break;
-                    case "subtract":
-                    operator='-';
-                    display.textContent = `${operandA}`;
-                    minus();
-                    break;
-                    case "multiply":
-                    operator='x';
-                    display.textContent = `${operandA}`;
-                    multiplication();
-                    break;
-                    case "divide":
-                    operator='÷';
-                    display.textContent = `${operandA}`;
-                    division();
-                    break;
-                    // case "add":
-                    // operator='+';
-                    // add();
-                    // break;
-                    // case "add":
-                    // operator='+';
-                    // add();
-                    // break;
-                    // case "add":
-                    // operator='+';
-                    // add();
-                    // break;
-                    // case "add":
-                    // operator='+';
-                    // add();
-                    // break;
+    //    // function getOperator(){
+    //     row.addEventListener("click", (e)=>{
+    //             let target= e.target;
+    //             switch(target.id){
+    //                 case "add":
+    //                 operator='+';
+    //                 display.textContent = `${operator}`;
+    //                 add();
+    //                 break;
+    //                 case "subtract":
+    //                 operator='-';
+    //                 display.textContent = `${operandA}`;
+    //                 minus();
+    //                 break;
+    //                 case "multiply":
+    //                 operator='x';
+    //                 display.textContent = `${operandA}`;
+    //                 multiplication();
+    //                 break;
+    //                 case "divide":
+    //                 operator='÷';
+    //                 display.textContent = `${operandA}`;
+    //                 division();
+    //                 break;
+    //                 // case "add":
+    //                 // operator='+';
+    //                 // add();
+    //                 // break;
+    //                 // case "add":
+    //                 // operator='+';
+    //                 // add();
+    //                 // break;
+    //                 // case "add":
+    //                 // operator='+';
+    //                 // add();
+    //                 // break;
+    //                 // case "add":
+    //                 // operator='+';
+    //                 // add();
+    //                 // break;
 
-                }console.log(operator);
-                }) 
-       // }getOperator();
-
-
+    //             }console.log(operator);
+    //             }) 
+    //    // }getOperator();
 
 
 
 
 
 
-       // function getOperandB(){
+
+
+    //    // function getOperandB(){
         
-            num.addEventListener("click", (e)=>{
-             let target= e.target;
-             switch(target.id){
-                case "one":
-                    operandB.concat(Number(1));
-                    display.textContent = `${operandB}`;
-                    break;
-                    case "two":
-                    operandB.concat(2);
-                    display.textContent = `${operandB}`;
-                    break;
-                    case "three":
-                    operandB.concat(3);
-                    display.textContent = `${operandB}`;
-                    break;
-                    case "four":
-                    operandB.concat(4);
-                    display.textContent = `${operandB}`;
-                    break;
-                    case "five":
-                    operandB.concat(5);
-                    display.textContent = `${operandB}`;
-                    break;
-                    case "six":
-                    operandB.concat(6);
-                    display.textContent = `${operandB}`;
-                    break;
-                    case "seven":
-                    operandB.concat(7);
-                    display.textContent = `${operandB}`;
-                    break;
-                    case "eight":
-                    operandB.concat(8);
-                    display.textContent = `${operandB}`;
-                    break;
-                    case "nine":
-                    operandB.concat(9);
-                    display.textContent = `${operandB}`;
-                    break;
-                    case "zero":
-                    operandB.concat(0);
-                    display.textContent = `${operandB}`;
-                    break;
+    //    row.addEventListener("click", (e)=>{
+    //          let target= e.target;
+    //          switch(target.id){
+    //             case "one":
+    //                 operandB.push(Number(1));
+    //                 display.textContent = `${operandB}`;
+    //                 break;
+    //                 case "two":
+    //                 operandB.push(2);
+    //                 display.textContent = `${operandB}`;
+    //                 break;
+    //                 case "three":
+    //                 operandB.push(3);
+    //                 display.textContent = `${operandB}`;
+    //                 break;
+    //                 case "four":
+    //                 operandB.push(4);
+    //                 display.textContent = `${operandB}`;
+    //                 break;
+    //                 case "five":
+    //                 operandB.push(5);
+    //                 display.textContent = `${operandB}`;
+    //                 break;
+    //                 case "six":
+    //                 operandB.push(6);
+    //                 display.textContent = `${operandB}`;
+    //                 break;
+    //                 case "seven":
+    //                 operandB.push(7);
+    //                 display.textContent = `${operandB}`;
+    //                 break;
+    //                 case "eight":
+    //                 operandB.push(8);
+    //                 display.textContent = `${operandB}`;
+    //                 break;
+    //                 case "nine":
+    //                 operandB.push(9);
+    //                 display.textContent = `${operandB}`;
+    //                 break;
+    //                 case "zero":
+    //                 operandB.push(0);
+    //                 display.textContent = `${operandB}`;
+    //                 break;
+    //                 case "ac":
+    //                 ac =0;
+    //                 display.textContent = ac;
+    //                 break;
+    //                 case "uniary":
+    //                 display.textContent = getUniary;
+    //                 break;
+    //                 case "dot":
+    //                 for(let dots = 1; dots <= 1; dots++){
+    //                 display.textContent = ".";
+    //                     }
+    //                 break;
+    //                 case "delete":
+    //                 break;
                     
                    
-             } console.log(operandB);  
-            })
-       // }getOperandB();
+    //          } console.log(operandB);  
+    //         })
+    //    // }getOperandB();
         
 
 
