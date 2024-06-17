@@ -21,16 +21,17 @@ body{
     width: 30vh;
     background-color:rgb(45, 44, 44);
     color: white;
-    text-align:right;
+    display: flex;
+     justify-content:end;
+     align-items: center;
     margin: 5vh 2vh;
     margin-bottom: 2vh;
     font-size: 4vh;
     
-    
 }
 
 
-#one,#two,#three,#four,#five,#six,#seven,#eight,#nine,#dot,#delete,#zero{
+#key{
     height:7vh ;
     width:7vh ;
     border-radius: 50%;
@@ -40,10 +41,9 @@ body{
     font-size: 20px;
     border: 0;
     margin: 1px;
-    
-
 } 
-#add,#subtract,#multiply,#divide,#equals{
+
+#operator-btn{
     height:7vh ;
     width:7vh ;
     border-radius: 50%;
@@ -54,7 +54,7 @@ body{
     border: 0;
     margin: 1px;
 }
-#uniary,#percent,#ac{
+.color,#ac{
     height:7vh ;
     width:7vh ;
     border-radius: 50%;
@@ -66,25 +66,14 @@ body{
     margin: 1px;
 }
 
-/* {
-    height:7vh ;
-    width: 14vh;
-    border-radius: 30%;
-    background-color: rgb(36, 35, 35);
-    color: white;
-    border: 0; 
-    font-size: 20px; 
-    margin: 1px;
-
-} */
-#zero:hover,#one:hover,#two:hover,#three:hover,#four:hover,#five:hover,#six:hover,#seven:hover,#eight:hover,#nine:hover,#dot:hover,#delete:hover{
+#key:hover{
     background-color: rgb(71, 70, 70);
 }
-#add:hover,#subtract:hover,#multiply:hover,#divide:hover,#equals:hover{
+#operator-btn:hover{
     background-color:rgb(250, 176, 78);
 
 }
-#uniary:hover,#percent:hover,#ac:hover{
+.color:hover,#ac:hover{
     background-color:rgb(162, 159, 159);
 
 }
