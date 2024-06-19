@@ -8,6 +8,7 @@ let btn = document.querySelectorAll("button")
 
 let operandA = 0;
 let operandB = 0;
+ operator ='';
 
 
 
@@ -45,7 +46,8 @@ function getPercent(){
      // function for calculator operator
      function calculator(appendA,appendB,operator){
         populateDisplay();
-   if (operator="+"&& equals.onclick){
+      //  const operate = array.reduce((appendA,appendB) => `${appendA+operator+appendB}`) 
+     if (operator="+"&& equals.onclick){
     add();
    } if (operator="-"&& equals.onclick){
     subtract();
@@ -61,12 +63,12 @@ function getPercent(){
     
      }calculator();
        
-     let screen = 0;
+     
 
 
      //  functions that populate the display when clicked. store display variable somewhere.
     function populateDisplay(){
-      
+        let screen = 0;
         btn.forEach((button)=> {button.addEventListener("click",()=>{
             
          if (button.id == "ac") {
@@ -74,24 +76,33 @@ function getPercent(){
             display.textContent=0;
             
             
-        }else if(button.id =="key"){
-            console.log(button.textContent)
+        }else {
+           if(button.textContent === '+'
+           ||button.textContent === '-'
+           ||button.textContent === '÷'
+           ||button.textContent === 'x'
+          ||button.textContent === '%'
+          ||button.textContent === '='
+        ) {
+            display.textContent= '';
+            operator=button.textContent;
+            
+            appendB= display.textContent;
+            console.log(appendB);
+        } else if(button.textContent==="Del"){
+            
+        }
+        else{console.log(button.textContent)
+            
             screen = button.textContent;
-            appendA += screen
             display.textContent += screen;
+            appendA= display.textContent;
+            
+            console.log(appendA)
+           
         }
          
-
-        //  if(screen =='+'){
-        //     add();
-        //     console.log("plus")
-        //  } else if (screen == '-'){
-        //     subtract();
-        //     console.log("minus")
-        //  }
-        // }   
-         
-            
+        }           
         });
     });
         
