@@ -31,7 +31,7 @@ body{
 }
 
 
-#key{
+.key{
     height:7vh ;
     width:7vh ;
     border-radius: 50%;
@@ -43,7 +43,7 @@ body{
     margin: 1px;
 } 
 
-#operator-btn{
+.operator-btn{
     height:7vh ;
     width:7vh ;
     border-radius: 50%;
@@ -66,10 +66,10 @@ body{
     margin: 1px;
 }
 
-#key:hover{
+.key:hover{
     background-color: rgb(71, 70, 70);
 }
-#operator-btn:hover{
+.operator-btn:hover{
     background-color:rgb(250, 176, 78);
 
 }

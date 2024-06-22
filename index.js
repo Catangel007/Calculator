@@ -41,95 +41,32 @@ function getPercent(a,b){
 
   
 
-     // function for calculator operator
-     function calculator(appendA,appendB,operator){
-       
-        let result = 0;
-    
-     if (operator=="+="){  
-    result = `${add(appendA,appendB)}`;
-    console.log(result);
-   }else if (operator=="-="){
-    result =`${subtract(appendA,appendB)}`;
-    console.log(result);
-   }else if (operator=="÷="){
-    result=`${divide(appendA,appendB)}`;
-    console.log(result);
-   }else if (operator=="x="){
-    result =`${multiplication(appendA,appendB)}`;
-    console.log(result);
-   }else if (operator=="+/-"){
-    result =`${getSign(appendA,appendB)}`;
-    console.log(result);
-   }else if (operator=="%="){
-    result=`${getPercent(appendA,appendB)}`;
-    console.log(result);
-   }else if(operator == "="){
-
-    display.Content= appendA;
-    operator = '';
-   }
-    
-     }calculator();
-       
-     
-
-
      //  functions that populate the display when clicked. store display variable somewhere.
-    function populateDisplay(){
-        let screen = 0;
-        let turnUp= true;
-        if (turnUp=false){
+    function updateDisplay(){
+        for(let i = 0; i < btn.length; i++){
+
+          btn[i].addEventListener("click", () => {
+            if(btn[i].classList.contains('key')){
+                display.textContent += btn[i].textContent
+
+
+            }else if(btn[i].classList.contains('operator-btn')){
+                a = Number(display.textContent)
+                display.textContent = btn[i].textContent
+                operator = display.textContent
+                display.textContent = ""
+
+
+            }else{
+                b = Number(display.textContent)
+                display.textContent = calculator(operator)
+            }
+          })
+
+
 
         }
-        btn.forEach((button)=> {button.addEventListener("click",()=>{
-            
-         if (button.id == "ac") {
-
-            display.textContent=0;
-            
-            
-        }else{
-           if(button.textContent === '+'
-            ||button.textContent === '-'
-            ||button.textContent === '÷'
-            ||button.textContent === 'x'
-            ||button.textContent === '%'
-            ||button.textContent === '='
-            ||button.textContent === '+/-'
-            ||button.textContent === '%'
-        ) {
-            display.textContent= '';
-            operator=operator.concat(button.textContent);
-            
-            
-        } 
-        else if(button.textContent === '1'
-                ||button.textContent === '2'
-                ||button.textContent === '3'
-                ||button.textContent === '4'
-                ||button.textContent === '5'
-                ||button.textContent === '6'
-                ||button.textContent === '7'
-                ||button.textContent === '8'
-                ||button.textContent === '9'
-                ||button.textContent === '0'
-                ||button.textContent === '.'
-        
-      ){console.log(button.textContent)
-            
-          if(operator==''){
-            screen = button.textContent;
-            display.textContent += screen;
-            appendA=parseInt(display.textContent);
-            console.log(appendA);
-          }else if ( operator!=''){
-            screen = button.textContent;
-            display.textContent += screen;
-            appendB=parseInt(display.textContent);
-            console.log(appendB);
-        }}
-
+       
             
            
             
@@ -148,17 +85,33 @@ function getPercent(a,b){
         //  }          
          
         } 
-        return [appendA, appendB, operator] ;
-        });
-    });
-        
-    } populateDisplay();
+     
 
 
 
+  // function for calculator operation
+  function calculator(operator){
+       
+    let result = 0;
 
-
-
+ if (operator==="+"){  
+ return add(a,b)
+}else if (operator==="-"){
+return subtract(a,b)
+}else if (operator==="÷"){
+return divide(a,b)
+}else if (operator==="x"){
+return multiplication(a,b)
+}else if (operator==="+/-"){
+return getSign(a,b)
+}else if (operator==="%"){
+return getPercent(a,b)
+}else if(operator === "="){
+ result = calculator(operator)
+display.textContent =result;
+operator = '';
+}
+  }
 
 
 
