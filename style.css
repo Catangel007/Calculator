@@ -31,7 +31,7 @@ body{
 }
 
 
-.key{
+.key,.del{
     height:7vh ;
     width:7vh ;
     border-radius: 50%;
@@ -66,7 +66,7 @@ body{
     margin: 1px;
 }
 
-.key:hover{
+.key:hover,.del:hover{
     background-color: rgb(71, 70, 70);
 }
 .operator-btn:hover,.equals:hover{

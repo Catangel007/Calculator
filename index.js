@@ -4,7 +4,7 @@ let display = document.querySelector('.display');
 let operation = document.querySelectorAll('#operator-btn');
 const equals = document.querySelector(".equals")
 let btn = document.querySelectorAll("button")
-
+const del= document.querySelector(".del")
 
 let a = '';
 let b = '';
@@ -34,9 +34,8 @@ function divide(a,b){
     }
 
 function getSign(a,b){
-    let sign = (a= -a )|| (b= -b);  
-    return sign;
-   }
+    display.textContent="-";
+}
 
 function getPercent(a,b){
     let percentage = (a/100)||(b/100);
@@ -80,6 +79,8 @@ function getPercent(a,b){
                 operator=''
                 a = result
            console.log(result)
+           }else if (btn[i].classList.contains('del')){
+            display.textContent = display.textContent.slice(0, -1);
            }
         })
 
@@ -92,24 +93,32 @@ function getPercent(a,b){
            function toggle(){
             let isClicked =false;
             let isClickedAgain= false;
-            
+            let count = 0;
             ac.addEventListener("click",()=>{
-                for(let i=0; i<=2;i++){
-          if(i=1&& (isClicked=true)){
-            display.textContent=0;
-            ac.textContent="C";
-            updateDisplay()
+                count++;
+  
+             if (count===1){
+              isClicked=true
+              display.textContent=0;
+              ac.textContent="C";
+              updateDisplay()
+  
+  
+          } else if(count===2){
+              isClickedAgain=true
+              ac.textContent="AC"
+              display.textContent=''
+              
+          } else{
+              location.reload(true);
+              result=0;
+              a=0;
+              b=0;
+              operator=''
+              updateDisplay()
+                console.log('The DOM is fully loaded.');
             
-           
-          } else if(i=2){
-            isClickedAgain=true
-            ac.textContent="AC"
-            display.textContent=''
-            result=0;
           }
-            
-        }    
-          
             
           })}
             toggle() 
@@ -158,7 +167,12 @@ operator = '';
 
 
 
-
+   del.addEventListener("click", () => {
+   
+    //  inputValue = inputValue.slice(0, -1);
+    //  inputNumber.innerHTML = inputValue
+ });
+ 
 
 
 
