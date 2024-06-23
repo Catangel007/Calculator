@@ -6,10 +6,10 @@ const equals = document.querySelector(".equals")
 let btn = document.querySelectorAll("button")
 
 
-let appendA = 0;
-let appendB = 0;
+let a = '';
+let b = '';
  let operator ='';
-
+ let result = 0;
 
 // functions for operation
 
@@ -30,7 +30,7 @@ function divide(a,b){
     }
 
 function getSign(a,b){
-    let sign = -a || -b;  
+    let sign = (a= -a )|| (b= -b);  
     return sign;
    }
 
@@ -43,29 +43,45 @@ function getPercent(a,b){
 
      //  functions that populate the display when clicked. store display variable somewhere.
     function updateDisplay(){
-        for(let i = 0; i < btn.length; i++){
+        
+    // let arr = Array.prototype.slice.call(btn)
+     for(let i = 0; i<btn.length;i++) {
+       if (btn[i]===0){
 
-          btn[i].addEventListener("click", () => {
-            if(btn[i].classList.contains('key')){
-                display.textContent += btn[i].textContent
-
-
-            }else if(btn[i].classList.contains('operator-btn')){
-                a = Number(display.textContent)
-                display.textContent = btn[i].textContent
-                operator = display.textContent
-                display.textContent = ""
-
-
-            }else{
-                b = Number(display.textContent)
-                display.textContent = calculator(operator)
-            }
-          })
+           btn.addEventListener("click",()=>{})
+       }
+         btn[i].addEventListener("click", () => {
+           if(btn[i].classList.contains('key')&& operator===''){
+               display.textContent += btn[i].textContent
+               a = Number(display.textContent)
+               console.log(a)
 
 
+           }else if(btn[i].classList.contains('operator-btn')){
+            
+               operator = btn[i].textContent
+               display.textContent = ""
+               console.log(operator)
 
-        }
+           }else if(btn[i].classList.contains('key')&& operator!==''){
+               display.textContent += btn[i].textContent
+               b = Number(display.textContent)
+               console.log(b)
+               
+               
+                
+           } else if (btn[i].classList.contains('equals')){
+              result = calculator(operator)
+                display.textContent =result;
+                operator=''
+                a = result
+           console.log(result)
+           }
+        })
+
+
+      }
+        } updateDisplay()
        
             
            
@@ -84,7 +100,7 @@ function getPercent(a,b){
         //    }  backspace();
         //  }          
          
-        } 
+        
      
 
 
@@ -92,7 +108,7 @@ function getPercent(a,b){
   // function for calculator operation
   function calculator(operator){
        
-    let result = 0;
+   
 
  if (operator==="+"){  
  return add(a,b)
@@ -103,12 +119,11 @@ return divide(a,b)
 }else if (operator==="x"){
 return multiplication(a,b)
 }else if (operator==="+/-"){
-return getSign(a,b)
+return getSign(-a,-b)
 }else if (operator==="%"){
 return getPercent(a,b)
-}else if(operator === "="){
- result = calculator(operator)
-display.textContent =result;
+}else {
+
 operator = '';
 }
   }

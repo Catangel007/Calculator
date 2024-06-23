@@ -43,7 +43,7 @@ body{
     margin: 1px;
 } 
 
-.operator-btn{
+.operator-btn,.equals{
     height:7vh ;
     width:7vh ;
     border-radius: 50%;
@@ -54,7 +54,7 @@ body{
     border: 0;
     margin: 1px;
 }
-.color,.colorp,#ac{
+#color,#colorp,#ac{
     height:7vh ;
     width:7vh ;
     border-radius: 50%;
@@ -69,11 +69,11 @@ body{
 .key:hover{
     background-color: rgb(71, 70, 70);
 }
-.operator-btn:hover{
+.operator-btn:hover,.equals:hover{
     background-color:rgb(250, 176, 78);
 
 }
-.color:hover,#ac:hover{
+#color:hover,#colorp:hover, #ac:hover{
     background-color:rgb(162, 159, 159);
 
 }
