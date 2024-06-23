@@ -1,5 +1,5 @@
 // variables that perform calculator function.
-
+let ac = document.querySelector('#ac')
 let display = document.querySelector('.display');
 let operation = document.querySelectorAll('#operator-btn');
 const equals = document.querySelector(".equals")
@@ -26,7 +26,11 @@ function multiplication(a,b){
     }
 
 function divide(a,b){
-    return a / b;
+    if(b===0){
+    display.textContent="infinity error"
+    }
+    else{ return a / b;}
+   
     }
 
 function getSign(a,b){
@@ -81,11 +85,34 @@ function getPercent(a,b){
 
 
       }
-        } updateDisplay()
+        } 
        
             
-           
+           //function to toggle on and off the calculator
+           function toggle(){
+            let isClicked =false;
+            let isClickedAgain= false;
             
+            ac.addEventListener("click",()=>{
+                for(let i=0; i<=2;i++){
+          if(i=1&& (isClicked=true)){
+            display.textContent=0;
+            ac.textContent="C";
+            updateDisplay()
+            
+           
+          } else if(i=2){
+            isClickedAgain=true
+            ac.textContent="AC"
+            display.textContent=''
+            result=0;
+          }
+            
+        }    
+          
+            
+          })}
+            toggle() 
             
             
            
@@ -119,7 +146,7 @@ return divide(a,b)
 }else if (operator==="x"){
 return multiplication(a,b)
 }else if (operator==="+/-"){
-return getSign(-a,-b)
+return getSign(a,b)
 }else if (operator==="%"){
 return getPercent(a,b)
 }else {
