@@ -5,6 +5,8 @@ let operation = document.querySelectorAll('#operator-btn');
 const equals = document.querySelector(".equals")
 let btn = document.querySelectorAll("button")
 const del= document.querySelector(".del")
+let negButton= document.querySelector('.color')
+
 
 let a = '';
 let b = '';
@@ -33,10 +35,6 @@ function divide(a,b){
    
     }
 
-function getSign(a,b){
-    display.textContent="-";
-}
-
 function getPercent(a,b){
     let percentage = (a/100)||(b/100);
     return percentage;
@@ -46,8 +44,6 @@ function getPercent(a,b){
 
      //  functions that populate the display when clicked. store display variable somewhere.
     function updateDisplay(){
-        
-    // let arr = Array.prototype.slice.call(btn)
      for(let i = 0; i<btn.length;i++) {
        if (btn[i]===0){
 
@@ -81,12 +77,19 @@ function getPercent(a,b){
            console.log(result)
            }else if (btn[i].classList.contains('del')){
             display.textContent = display.textContent.slice(0, -1);
+           }else if (btn[i].classList.contains('color')){
+            if (display.textContent[0]!== "-"){
+             display.textContent = "-"+ display.textContent; 
+            }else{
+               display.textContent= display.textContent.slice(1);
+              
+            }
            }
-        })
 
-
+           })
+        }
       }
-        } 
+         
        
             
            //function to toggle on and off the calculator
@@ -123,29 +126,11 @@ function getPercent(a,b){
           })}
             toggle() 
             
-            
-           
-        // } else if(button.textContent==="Del"){
-        //     function backspace (appendA,appendB){
-        //      let undo = appendA||appendB;
-             
-        //      undo=undo.split('');
-        //      undo=undo.splice(undo.length-1,1)
-        //      undo= undo.join('');
-             
-        //    }  backspace();
-        //  }          
-         
-        
-     
-
 
 
   // function for calculator operation
   function calculator(operator){
        
-   
-
  if (operator==="+"){  
  return add(a,b)
 }else if (operator==="-"){
@@ -154,8 +139,6 @@ return subtract(a,b)
 return divide(a,b)
 }else if (operator==="x"){
 return multiplication(a,b)
-}else if (operator==="+/-"){
-return getSign(a,b)
 }else if (operator==="%"){
 return getPercent(a,b)
 }else {
@@ -167,19 +150,4 @@ operator = '';
 
 
 
-   del.addEventListener("click", () => {
-   
-    //  inputValue = inputValue.slice(0, -1);
-    //  inputNumber.innerHTML = inputValue
- });
- 
-
-
-
-     // store all values and call the  calculator operate function 
-     // operation with decimals
-     // function to display error if the user divide by 0
-     // allow only one dot in calc function
-     // add backspace button to undo if the user clicked a wrong number
-     // add keyboard support
-     
+  
